@@ -19,7 +19,7 @@ module Jsoner
     end
 
     def build_header
-      @table_rows[0].search('th').map(&:content)
+      @table_rows[0].search('th').map { |th| th.content.strip }
     end
 
     def build_body
