@@ -19,13 +19,13 @@ module Jsoner
     end
 
     def build_header
-      @table_rows[0].search('th').map { |th| th.content.strip }
+      @table_rows[0].search('th').map { |th| th.content.strip.downcase }
     end
 
     def build_body
       row_number = @table_rows.count - 1
       (1..row_number).map do |row|
-        @table_rows[row].search('td').map(&:content)
+        @table_rows[row].search('td').map { |td| td.content.strip }
       end
     end
 
