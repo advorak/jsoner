@@ -25,7 +25,7 @@ module Jsoner
     def build_body
       row_number = @table_rows.count - 1
       (1..row_number).map do |row|
-        @table_rows[row].search('td').map { |td| td.content.strip }
+        @table_rows[row].search('td').map { |td| td.inner_html.strip }
       end
     end
 
