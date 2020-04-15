@@ -1,3 +1,3 @@
 module Jsoner
-  VERSION = "0.0.8-advorak"
+  VERSION = "0.0.9-advorak"
 end
