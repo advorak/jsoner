@@ -25,7 +25,7 @@ module Jsoner
     def build_body
       row_number = @table_rows.count - 1
       (1..row_number).map do |row|
-        @table_rows[row].search('td').map { |td| td.inner_html.gsub("<div align=\"right\">",'').gsub("</div>",'').gsub(/[[:space:]]/,'') }
+        @table_rows[row].search('td').map { |td| td.inner_html.gsub("<div align=\"right\">",'').gsub("</div>",'').strip }
       end
     end
 
